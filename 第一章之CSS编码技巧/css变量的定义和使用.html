@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css变量的定义和使用</title>
+    <style>
+      ul{
+        --current-color: purple;
+      }
+      ol{
+        --current-color: grey;
+      }
+      li{
+        background: var(--current-color);
+      }
+    </style>
+  </head>
+  <body>
+
+    <ul>
+      <li>这是无序列表的第一个元素</li>
+      <li>这是无序列表的第二个元素</li>
+      <li>这是无序列表的第三个元素</li>
+    </ul>
+
+    <ol>
+      <li>这是有序列表的第一个元素</li>
+      <li>这是有序列表的第二个元素</li>
+      <li>这是有序列表的第三个元素</li>
+    </ol>
+  </body>
+</html>

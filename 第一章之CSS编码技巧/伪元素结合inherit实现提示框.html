@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>伪元素结合inherit实现默认提示框</title>
+    <style>
+      div{
+        position: relative;
+        background: #f1d17f;
+        width: 200px;
+        border-radius: 5px;
+        top: 10px;
+        padding: 7px;
+      }
+      div::before{
+        content: "";
+        position: absolute;
+        top: -.4em;
+        left: 1em;
+        padding: .35em;
+        background: inherit;
+        border: inherit;
+        border-right: 0;
+        border-bottom: 0;
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <p>your name:</p>
+    <input placeholder="name" />
+    <div>
+      Only letters, numbers, underscores(_) and hyphens(-) allowed!
+    </div>
+  </body>
+</html>
