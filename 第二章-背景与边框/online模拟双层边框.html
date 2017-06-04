@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>outline模拟双层边框</title>
+    <style>
+      div.normal{
+        width:100px;
+        height: 60px;
+        background: yellowgreen;
+        border: 10px solid #655;
+        outline: 5px solid deeppink;
+      }
+      div.dashed{
+        width: 200px;
+        height: 100px;
+        background: #333;
+        border-radius: 10px;
+        outline: 1px dashed #fff;
+        outline-offset: -15px;
+      }
+      div.notclear{
+        width: 200px;
+        height: 100px;
+        background: green;
+        border-radius: 20px;
+        outline: 5px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <p>普通双层边框</p>
+    <div class="normal"></div>
+    <br />
+    <p>缝边效果</p>
+    <div class="dashed"></div>
+    <br />
+    <p>不贴合边框</p>
+    <div class="notclear"></div>
+  </body>
+</html>
