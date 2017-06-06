@@ -243,3 +243,44 @@ background: url(http://csssecrets.io/images/code-pirate.svg)
             no-repeat bottom right #58a;
 background-position: calc(100% - 20px) calc(100% - 10px); /*注意：calc()函数内部的 - 和 + 要加空白符，否则会报错。*/
 ```
+
+####  边框内圆角
+
+普通实现方案：
+
+```css
+<div class="something-meaningful">
+  <div> I have a nice subtle inner rounding, don’t I look pretty? </div>
+</div>
+.something-meaningful {
+  background: #655;
+  padding: .8em;
+  max-width: 10em;
+}
+.something-meaningful > div {
+  background: tan;
+  border-radius: .8em;
+  padding: 1em;
+}
+```
+更好的解决方案--`box-shadow+outline`
+
+```css
+max-width: 10em;
+border-radius: .8em;
+padding: 1em;
+background: tan;
+font: 100%/1.5 sans-serif;
+box-shadow: 0 0 0 .4em #655;
+outline: .6em solid #655;
+```
+
+其中的原理是：
+
+    outline不会跟着元素的圆角走，但是box-shadow会。
+    因此box-shadow会填充outline和容器圆角之间的空隙。
+
+
+**注意**
+投影扩张值有一个最小值，假设圆角半径为r，那么投影（box-shadow）的最小值为(√2-1)r。
+为了避免每次都要重新计算，可以采取圆角半径的一半，因为：假设r为1，那么最小值min≈0.414＜0.5.
